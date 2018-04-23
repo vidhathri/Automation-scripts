@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import Utility.constant;
-import Utility.csvUtils;
+//import Utility.csvUtils;
 import Utility.utils;
 import pageObjects.Post_page;
 
@@ -18,12 +18,12 @@ public class POM_TC_1 {
 	
 	public static void main(String[] args) throws Exception {
 		 
-		System.setProperty("webdriver.gecko.driver", "/Users/vidhathri/Downloads/geckodriver");
+		System.setProperty("webdriver.gecko.driver", constant.bwsr_url);
 		WebDriver driver = new FirefoxDriver();
 		driver.get(constant.URL);
 		
 		driver.findElement(By.xpath("//div[@class='container']//a[@href='/en/users/login']")).click(); 
-		utils.setExcelFile(constant.Path_TestData + constant.File_TestData,"Sheet1");
+	    utils.setExcelFile(constant.Path_TestData + constant.File_TestData,"Sheet1");
 		//csvUtils.fileReader(constant.Path_TestData + constant.File_TestData);
 		String Username = utils.getCellData(1, 1);
 		//String Username = 
@@ -38,7 +38,9 @@ public class POM_TC_1 {
 		//driver.get("https://ss-web-aikman.ap.ngrok.io/en/post-ad/details?type=for_sale&category=412&location=2129");
 		driver.findElement(By.xpath("//div[contains(@class, 'is-level-1')]//li[contains(@class, 'cat-409')]")).click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		WebElement element = driver.findElement(By.xpath("//div[contains(@class , 'is-level-2')]//a[text()='New Developments']"));
+      //div[@class='serp-categories']//div[contains(@class,'is-level-1')]//a[@href='/en/ads-categories?categoryId=409']
+      
+      	WebElement element = driver.findElement(By.xpath("//div[contains(@class , 'is-level-2')]//a[text()='New Developments']"));
         JavascriptExecutor js = (JavascriptExecutor)driver; 
         js.executeScript("arguments[0].click();", element);
 		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
