@@ -1,7 +1,8 @@
 package pageObjects;
 
-
+ 
 import org.openqa.selenium.By;
+
 //import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,19 +64,20 @@ public class Post_page {
 	
 	
 	public static WebElement upload_img(WebDriver driver){
-		element = driver.findElement(By.xpath("//div[@class='post-upload']//input[@id='image']"));
+		element = driver.findElement(By.id("image"));
+				//("//div[@class='post-upload']//input[@id='image']"));
 	    return element;	
 }
 	
 	
 	
 	public static WebElement send_size(WebDriver driver){
-		element = driver.findElement(By.xpath(".//*[@id='fields-size-value']"));
+		element = driver.findElement(By.xpath(".//*[@id='fields-size-value']")
+				);
 	    return element;	
 }
 	
-	
-	
+
 	
 
 	//xpath = .//*[@id='image']

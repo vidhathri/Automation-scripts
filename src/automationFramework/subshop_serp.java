@@ -16,7 +16,7 @@ import java.util.List;
 
 public class subshop_serp {
 	public static void main(String[] args) throws Exception {
-	System.setProperty("webdriver.gecko.driver",constant.bwsr_url);
+	System.setProperty("webdriver.gecko.driver",constant.firfx_brw);
 	WebDriver driver = new FirefoxDriver();
 	driver.get("https://ss-web-aikman.ap.ngrok.io/en/ads/sri-lanka/new-developments");
 	String xpathofElement="//div[contains(@class,'item-content')]/a[@class='item-title h4']"; 

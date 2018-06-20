@@ -1,6 +1,9 @@
 package automationFramework;
 
 import org.testng.annotations.Test;
+
+import Utility.constant;
+
 import org.testng.annotations.BeforeClass;
 
 import java.util.List;
@@ -15,7 +18,8 @@ public class subshop_serpTest {
 	WebDriver driver;
   @BeforeClass
   public void beforeClass() {
-	  System.setProperty("webdriver.gecko.driver", "/Users/vidhathri/Downloads/geckodriver");
+		System.setProperty("webdriver.gecko.driver",constant.firfx_brw);
+		//WebDriver driver = new FirefoxDriver();
 
 	  driver = new FirefoxDriver();
 		driver.get("https://ss-web-aikman.ap.ngrok.io/en/ads/sri-lanka/new-developments");
